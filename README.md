@@ -33,5 +33,5 @@ bin/libs目录下的 nav_pathfinding.js 就是我们的主角。这个是我基�
 	 let gid = this.navPathfind.getGroupID("level", startPos);//先拿groupID
      let paths = this.navPathfind.findPath(startPos, endPos, "level", gid) //获取路径
 	 
-
+<a href='http://htmlpreview.github.io/?https://github.com/xhaoh94/h5_navmesh_pathfind/blob/master/NavMesh/bin/index.html'>demo</a>
 
