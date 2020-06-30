@@ -34,6 +34,6 @@ bin/libs目录下的 nav_pathfinding.js 就是我们的主角。这个是我基�
      let paths = this.navPathfind.findPath(startPos, endPos, "level", gid) //获取路径
 	 
 
-<a href='https://matrix3d.github.io/patrollaya/bin/h5/'>demo</a>
+<a href='https://github.com/xhaoh94/h5_navmesh_pathfind/blob/master/NavMesh/bin/'>demo</a>
 
 
