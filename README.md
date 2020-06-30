@@ -2,9 +2,7 @@
 
 h5 基于unity NavMesh导航寻路   
 
-
 通过unity生成的导航数据，导出给H5使用，已经提供了导出工具(需要安装python)  
-
 
 clone下来后  
 
@@ -24,24 +22,24 @@ bin/libs目录下的 nav_pathfinding.js 就是我们的主角。这个是我基�
 3、执行bin/res/navmesh/obj2json.bat 会将obj转换成json 到bin/res/navmesh/json/目录下  
 
 
-使用方式：(以laya为例子)
-1、	先加载我们生成的json
-	let navUrl = "res/Navmesh/json/SampleScene.json";
-	Laya.loader.load(navUrl, new Laya.Handler(this, this.OnLoadUrl), null, "json");
+使用方式：(以laya为例子)  
+1、	先加载我们生成的json  
+	let navUrl = "res/Navmesh/json/SampleScene.json";  
+	Laya.loader.load(navUrl, new Laya.Handler(this, this.OnLoadUrl), null, "json");  
 	
-2、	拿到加载数据后就可以创建 Pathfinding
-	OnLoadUrl() {
-        let navUrl = "res/Navmesh/json/SampleScene.json";
-        var json = Laya.loader.getRes(navUrl);       
-        this.navPathfind = new xhh.Pathfinding(Laya.Vector3); //传入Laya.Vector3 没传的话，默认使用库里的Vector3
-        let g = this.navPathfind.createGeometry(json);//生成 Geometry        
-        let zone = this.navPathfind.buildZone(g) //生成 Zone
-        this.navPathfind.setZoneData("level", zone); //setZoneData 两个参数，第一个是key 对应这个场景的Zone        
-    }
+2、	拿到加载数据后就可以创建 Pathfinding  
+	OnLoadUrl() {   
+        let navUrl = "res/Navmesh/json/SampleScene.json";  
+        var json = Laya.loader.getRes(navUrl);         
+        this.navPathfind = new xhh.Pathfinding(Laya.Vector3); //传入Laya.Vector3 没传的话，默认使用库里的Vector3  
+        let g = this.navPathfind.createGeometry(json);//生成 Geometry          
+        let zone = this.navPathfind.buildZone(g) //生成 Zone  
+        this.navPathfind.setZoneData("level", zone); //setZoneData 两个参数，第一个是key 对应这个场景的Zone          
+    }  
 
-3、	寻路
-	 let gid = this.navPathfind.getGroupID("level", startPos);//先拿groupID
-     let paths = this.navPathfind.findPath(startPos, endPos, "level", gid) //获取路径
+3、	寻路  
+	 let gid = this.navPathfind.getGroupID("level", startPos);//先拿groupID  
+     let paths = this.navPathfind.findPath(startPos, endPos, "level", gid) //获取路径  
 	 
 <a href='http://htmlpreview.github.io/?https://github.com/xhaoh94/h5_navmesh_pathfind/blob/master/NavMesh/bin/index.html'>demo</a>
 
