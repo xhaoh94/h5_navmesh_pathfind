@@ -26,18 +26,20 @@ public class MyEditor : EditorWindow
     }
     void OnGUI()
     {
-        EditorGUILayout.BeginHorizontal();
+     
         EditorGUILayout.LabelField("导出路径:" + path);
+		   EditorGUILayout.BeginHorizontal();
         if (GUILayout.Button("浏览"))
         {
             path = OpenPath();
             PlayerPrefs.SetString("ExportNavMeshDataPath", path);
         }
-        EditorGUILayout.EndHorizontal();
+        
         if (GUILayout.Button("导出"))
         {
             Export();
         }
+		EditorGUILayout.EndHorizontal();
     }
 
     void Export()
@@ -51,10 +53,7 @@ public class MyEditor : EditorWindow
         Debug.Log("NavMesh Export Start");
         NavMeshTriangulation navMeshTriangulation = NavMesh.CalculateTriangulation();
 
-        if (!Directory.Exists(path))
-        {
-            Directory.CreateDirectory(path);//不存在就创建目录
-        }
+
         //文件路径
         //string path = Application.dataPath + "/ExportNavMesh/" + SceneManager.GetActiveScene().name + ".obj";
         string objPath = path + "/" + SceneManager.GetActiveScene().name + ".obj";

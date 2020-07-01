@@ -35,6 +35,7 @@ var xhh;
             this._init(graph);
             //heuristic = heuristic || astar.manhattan;
             const openHeap = this._heap();
+
             openHeap.push(start);
             while (openHeap.size() > 0) {
                 // Grab the lowest f(x) to process next.  Heap keeps this sorted for us.
@@ -44,11 +45,11 @@ var xhh;
                     let curr = currentNode;
                     const ret = [];
                     while (curr.parent) {
-                        ret.push(curr);
+                        ret.unshift(curr);
                         curr = curr.parent;
                     }
                     this._cleanUp(ret);
-                    return ret.reverse();
+                    return ret;
                 }
                 currentNode.closed = true;
                 const neighbours = this._neighbours(graph, currentNode);
@@ -59,15 +60,16 @@ var xhh;
                         continue;
                     }
                     // The g score is the shortest distance from start to current node.
-                    // We need to check if the path we have arrived at this neighbour is the shortest one we have seen yet.
-                    const gScore = currentNode.g + neighbour.cost;
+                    // We need to check if the path we have arrived at this neighbour is the shortest one we have seen yet.  
+                    let g = this._heuristic(neighbour.centroid, currentNode.centroid);
+                    const gScore = currentNode.g + neighbour.cost + g;
                     const beenVisited = neighbour.visited;
                     if (!beenVisited || gScore < neighbour.g) {
                         // Found an optimal (so far) path to this node.  Take score for node to see how good it is.
                         neighbour.visited = true;
                         neighbour.parent = currentNode;
                         if (!neighbour.centroid || !end.centroid)
-                            throw new Error('Unexpected state');
+                            return []
                         neighbour.h = neighbour.h || this._heuristic(neighbour.centroid, end.centroid);
                         neighbour.g = gScore;
                         neighbour.f = neighbour.g + neighbour.h;
@@ -85,8 +87,8 @@ var xhh;
             // No result was found - empty array signifies failure to find path.
             return [];
         }
-        static _heuristic(pos1, pos2) {
-            return xhh.Utils.distanceToSquared(pos1, pos2);
+        static _heuristic(pos0, pos1) {
+            return xhh.Utils.distanceToSquared(pos0, pos1);
         }
         static _neighbours(graph, node) {
             const ret = [];
@@ -649,6 +651,7 @@ var xhh;
             return path;
         }
         _getNode(position, zoneID, groupID, checkPolygon = false) {
+
             const nodes = this.zones[zoneID].groups[groupID];
             const vertices = this.zones[zoneID].vertices;
             let rNode = null;

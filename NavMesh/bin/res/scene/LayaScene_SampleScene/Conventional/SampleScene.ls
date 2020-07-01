@@ -63,15 +63,15 @@
 					"isStatic":false,
 					"layer":0,
 					"position":[
-						0.02157571,
-						12.51075,
-						3.975988
+						6.272654,
+						17.15131,
+						-1.202109
 					],
 					"rotation":[
-						0.5822992,
-						0.001674592,
-						0.001238367,
-						-0.8129719
+						-0.3471391,
+						0.6126239,
+						0.3416288,
+						0.6224759
 					],
 					"scale":[
 						1,
@@ -259,7 +259,7 @@
 					"position":[
 						-3,
 						0.5,
-						0
+						0.83
 					],
 					"rotation":[
 						0,
@@ -601,6 +601,230 @@
 					]
 				},
 				"components":[],
+				"child":[]
+			},
+			{
+				"type":"MeshSprite3D",
+				"instanceID":11,
+				"props":{
+					"name":"Plane (1)",
+					"active":true,
+					"isStatic":false,
+					"layer":0,
+					"position":[
+						-11.28,
+						1.69,
+						0
+					],
+					"rotation":[
+						0,
+						0,
+						0,
+						-1
+					],
+					"scale":[
+						1,
+						1,
+						1
+					],
+					"meshPath":"Library/unity default resources-Plane.lm",
+					"enableRender":true,
+					"receiveShadows":true,
+					"castShadow":true,
+					"materials":[
+						{
+							"type":"Laya.BlinnPhongMaterial",
+							"path":"Assets/m2.lmat"
+						}
+					]
+				},
+				"components":[
+					{
+						"type":"PhysicsCollider",
+						"restitution":0,
+						"friction":0.5,
+						"rollingFriction":0,
+						"shapes":[
+							{
+								"type":"MeshColliderShape",
+								"mesh":"Library/unity default resources-Plane.lm"
+							}
+						],
+						"isTrigger":false
+					}
+				],
+				"child":[]
+			},
+			{
+				"type":"MeshSprite3D",
+				"instanceID":12,
+				"props":{
+					"name":"Cube (5)",
+					"active":true,
+					"isStatic":false,
+					"layer":0,
+					"position":[
+						-12.97,
+						2.19,
+						0
+					],
+					"rotation":[
+						0,
+						0,
+						0,
+						-1
+					],
+					"scale":[
+						1,
+						1,
+						1
+					],
+					"meshPath":"Library/unity default resources-Cube.lm",
+					"enableRender":true,
+					"receiveShadows":true,
+					"castShadow":true,
+					"materials":[
+						{
+							"path":"Assets/m1.lmat"
+						}
+					]
+				},
+				"components":[
+					{
+						"type":"PhysicsCollider",
+						"restitution":0,
+						"friction":0.5,
+						"rollingFriction":0,
+						"shapes":[
+							{
+								"type":"BoxColliderShape",
+								"center":[
+									0,
+									0,
+									0
+								],
+								"size":[
+									1,
+									1,
+									1
+								]
+							}
+						],
+						"isTrigger":false
+					}
+				],
+				"child":[]
+			},
+			{
+				"type":"MeshSprite3D",
+				"instanceID":13,
+				"props":{
+					"name":"Cube (6)",
+					"active":true,
+					"isStatic":false,
+					"layer":0,
+					"position":[
+						-8.93,
+						2.19,
+						1.21
+					],
+					"rotation":[
+						0,
+						0,
+						0,
+						-1
+					],
+					"scale":[
+						1,
+						1,
+						1
+					],
+					"meshPath":"Library/unity default resources-Cube.lm",
+					"enableRender":true,
+					"receiveShadows":true,
+					"castShadow":true,
+					"materials":[
+						{
+							"path":"Assets/m1.lmat"
+						}
+					]
+				},
+				"components":[
+					{
+						"type":"PhysicsCollider",
+						"restitution":0,
+						"friction":0.5,
+						"rollingFriction":0,
+						"shapes":[
+							{
+								"type":"BoxColliderShape",
+								"center":[
+									0,
+									0,
+									0
+								],
+								"size":[
+									1,
+									1,
+									1
+								]
+							}
+						],
+						"isTrigger":false
+					}
+				],
+				"child":[]
+			},
+			{
+				"type":"MeshSprite3D",
+				"instanceID":14,
+				"props":{
+					"name":"Plane (2)",
+					"active":true,
+					"isStatic":false,
+					"layer":0,
+					"position":[
+						-5.26,
+						0.98,
+						-1.120022
+					],
+					"rotation":[
+						0,
+						0,
+						0.2972152,
+						-0.9548106
+					],
+					"scale":[
+						0.3029138,
+						1,
+						0.2273447
+					],
+					"meshPath":"Library/unity default resources-Plane.lm",
+					"enableRender":true,
+					"receiveShadows":true,
+					"castShadow":true,
+					"materials":[
+						{
+							"type":"Laya.BlinnPhongMaterial",
+							"path":"Resources/unity_builtin_extra.lmat"
+						}
+					]
+				},
+				"components":[
+					{
+						"type":"PhysicsCollider",
+						"restitution":0,
+						"friction":0.5,
+						"rollingFriction":0,
+						"shapes":[
+							{
+								"type":"MeshColliderShape",
+								"mesh":"Library/unity default resources-Plane.lm"
+							}
+						],
+						"isTrigger":false
+					}
+				],
 				"child":[]
 			}
 		]

@@ -34,6 +34,6 @@ bin/libs目录下的 nav_pathfinding.js 就是我们的主角。这个是我基�
      let paths = this.navPathfind.findPath(startPos, endPos, "level", gid) //获取路径
 	 
 
-Demo
+感觉还有很多问题，基于多边形寻路，老感觉不太对 谨慎使用吧
 
 

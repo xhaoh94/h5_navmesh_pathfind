@@ -39,8 +39,9 @@ export default class Start extends Laya.Script {
 
     ontest(g: xhh.Geometry) {
         let p = g.vertices;
+
         for (let i = 0; i < p.length; i++) {
-            let t = new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(0.5, 0.5, 0.5))
+            let t = new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(0.2, 0.2, 0.2))            
             t.transform.position = new Laya.Vector3(p[i].x, p[i].y, p[i].z)
             this.scene.addChild(t);
         }
@@ -85,8 +86,9 @@ export default class Start extends Laya.Script {
                 this.scene.removeChild(this.pathboxArr[i])
                 this.pathboxArr[i].destroy();
             }
+
             for (let i = 0; i < p.length; i++) {
-                let temp = new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(0.5, 0.5, 0.5));
+                let temp = new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(0.2, 0.2, 0.2));
                 temp.transform.position = new Laya.Vector3(p[i].x, p[i].y, p[i].z)
                 this.scene.addChild(temp)
                 this.pathboxArr.push(temp);

@@ -22,11 +22,11 @@
             Laya.stage.addChild(scene);
             this.scene = scene;
             scene.zOrder = -1;
-            let navUrl = "res/Navmesh/json/SampleScene.json";
+            let navUrl = "res/navmesh/json/SampleScene.json";
             Laya.loader.load(navUrl, new Laya.Handler(this, this.OnLoadUrl), null, "json");
         }
         OnLoadUrl() {
-            let navUrl = "res/Navmesh/json/SampleScene.json";
+            let navUrl = "res/navmesh/json/SampleScene.json";
             var json = Laya.loader.getRes(navUrl);
             console.log(json);
             this.navPathfind = new xhh.Pathfinding(Laya.Vector3);
@@ -38,7 +38,7 @@
         ontest(g) {
             let p = g.vertices;
             for (let i = 0; i < p.length; i++) {
-                let t = new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(0.5, 0.5, 0.5));
+                let t = new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(0.2, 0.2, 0.2));
                 t.transform.position = new Laya.Vector3(p[i].x, p[i].y, p[i].z);
                 this.scene.addChild(t);
             }
@@ -74,7 +74,7 @@
                     this.pathboxArr[i].destroy();
                 }
                 for (let i = 0; i < p.length; i++) {
-                    let temp = new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(0.5, 0.5, 0.5));
+                    let temp = new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(0.2, 0.2, 0.2));
                     temp.transform.position = new Laya.Vector3(p[i].x, p[i].y, p[i].z);
                     this.scene.addChild(temp);
                     this.pathboxArr.push(temp);
